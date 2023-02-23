@@ -1,91 +1,32 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Manrope } from '@next/font/google'
+import { UserInfo } from "@/components/user-info";
 
-const inter = Inter({ subsets: ['latin'] })
+const manrope = Manrope({ subsets: ['latin'] })
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+    return (
+        <main className={`${manrope.className} px-6 grid place-items-center bg-primary h-full`}>
+            <div className={"bg-white rounded-lg flex flex-col lg:flex-row max-w-[730px]"}>
+                <div className={"relative h-[200px] lg:h-[280px] lg:w-[285px]"}>
+                    <Image className={"rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none"} src={"/images/drawers.jpg"}
+                           fill alt={"Drawers"}/>
+                </div>
+                <div className={"flex-1 flex flex-col"}>
+                    <div className={"px-8 lg:px-10 pb-5 pt-9 lg:pt-8"}>
+                        <h1 className={"font-bold text-base lg:text-xl text-black"}>Shift the overall look and feel by
+                            adding these wonderful touches to furniture in your home</h1>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+                        <p className={"text-xs text-grey mt-3"}>Ever been in a room and felt like something was missing?
+                            Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any
+                            room feel complete.</p>
+                    </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                    <UserInfo/>
+                </div>
+            </div>
+        </main>
+    )
 }
